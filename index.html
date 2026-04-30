@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hola Fresca - Have It Fresh</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #e6f7ff, #ffffff);
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  position: fixed;
+  width: 100%;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+nav h1 { color: #00aaff; }
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1497051788611-2c64812349a3') center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  animation: fadeUp 1s ease forwards;
+}
+
+.hero p {
+  animation: fadeUp 1.5s ease forwards;
+}
+
+.btn {
+  margin: 10px;
+  padding: 12px 22px;
+  border-radius: 30px;
+  border: none;
+  background: #00bfff;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background: #009acd;
+}
+
+/* FLOATING ICE */
+.ice {
+  position: absolute;
+  font-size: 30px;
+  animation: float 6s infinite ease-in-out;
+}
+
+.ice:nth-child(1) { top: 20%; left: 10%; }
+.ice:nth-child(2) { top: 50%; right: 10%; }
+.ice:nth-child(3) { bottom: 10%; left: 30%; }
+
+/* SECTIONS */
+section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.card {
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(12px);
+  margin: 15px;
+  padding: 20px;
+  border-radius: 15px;
+  display: inline-block;
+  width: 280px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* MENU */
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+
+/* GALLERY */
+.gallery img {
+  width: 250px;
+  height: 180px;
+  object-fit: cover;
+  margin: 10px;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0);}
+  50% { transform: translateY(-20px);}
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* FOOTER */
+footer {
+  background: #00aaff;
+  color: white;
+  padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <h1>Hola Fresca ❄️</h1>
+</nav>
+
+<div class="hero">
+  <div class="ice">🍦</div>
+  <div class="ice">❄️</div>
+  <div class="ice">🥤</div>
+
+  <h2>Have It Fresh</h2>
+  <p>Gelato • Mojitos • Chill Vibes</p>
+
+  <button class="btn" onclick="callNow()">Call</button>
+  <button class="btn" onclick="whatsapp()">WhatsApp</button>
+  <button class="btn" onclick="map()">Locate</button>
+</div>
+
+<section class="hidden">
+  <h2>🍦 Our Specialties</h2>
+
+  <div class="card">
+    <h3>Gelato</h3>
+    <p>Fresh, creamy & irresistible</p>
+  </div>
+
+  <div class="card">
+    <h3>Mojitos</h3>
+    <p>Refreshing cool drinks</p>
+  </div>
+
+  <div class="card">
+    <h3>Fast Food</h3>
+    <p>Burgers, Pizza & more</p>
+  </div>
+</section>
+
+<section class="hidden">
+  <h2>📸 Gallery</h2>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb">
+    <img src="https://images.unsplash.com/photo-1505253216365-4e7b55b7c92c">
+    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
+  </div>
+</section>
+
+<section class="hidden">
+  <h2>🍽️ Popular Menu</h2>
+
+  <div class="card">
+    <div class="menu-item"><span>Gelato Scoop</span><span>₹99</span></div>
+    <div class="menu-item"><span>Blue Curacao Mojito</span><span>₹179</span></div>
+    <div class="menu-item"><span>Peri Peri Chicken</span><span>₹290</span></div>
+    <div class="menu-item"><span>Mexican Burger</span><span>₹240</span></div>
+  </div>
+
+</section>
+
+<section class="hidden">
+  <h2>⭐ Reviews</h2>
+  <p>4.6 ★ Rated • Loved for gelato, ambiance & quantity</p>
+</section>
+
+<section class="hidden">
+  <h2>📍 Visit Us</h2>
+  <p>Teacher's Colony, Vijayawada</p>
+  <p>Open till 1 AM</p>
+
+  <button class="btn" onclick="map()">Open Map</button>
+</section>
+
+<footer>
+  Hola Fresca - Have It Fresh ❄️
+</footer>
+
+<script>
+// BUTTONS
+function callNow() {
+  window.location.href = "tel:7396831475";
+}
+
+function whatsapp() {
+  window.open("https://wa.me/917396831475");
+}
+
+function map() {
+  window.open("https://www.google.com/maps/search/?api=1&query=Hola+Fresca+Vijayawada");
+}
+
+// SCROLL ANIMATION
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
